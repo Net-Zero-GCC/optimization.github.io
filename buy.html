@@ -134,10 +134,10 @@
   .check     { color: var(--green); font-size: 1rem; flex-shrink: 0; margin-top: .05rem; }
   .cta-wrap  { padding: 0 2rem 2rem; display: flex; flex-direction: column; gap: .75rem; }
 
-  /* PayPal button */
-  .paypal-btn {
-    background: #ffd140;
-    color: #111;
+  /* Buy button */
+  .buy-btn {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
     border: none;
     border-radius: 10px;
     padding: .9rem;
@@ -153,10 +153,10 @@
     transition: opacity .15s, transform .1s;
     font-family: inherit;
   }
-  .paypal-btn:hover  { opacity: .9; }
-  .paypal-btn:active { transform: scale(.98); }
-  .paypal-btn.yearly { background: linear-gradient(135deg, var(--gold), #f97316); color: #000; }
-  .paypal-logo { font-size: 1.1rem; }
+  .buy-btn:hover  { opacity: .9; }
+  .buy-btn:active { transform: scale(.98); }
+  .buy-btn.yearly { background: linear-gradient(135deg, var(--gold), #f97316); color: #000; }
+  .buy-icon { font-size: 1.1rem; }
   .trust-note {
     text-align: center;
     color: var(--muted);
@@ -254,13 +254,13 @@
       <div class="feature"><span class="check">✓</span><span>Email support included</span></div>
     </div>
     <div class="cta-wrap">
-      <a href="https://www.paypal.com/ncp/payment/3ECN9EQK9YFZY"
-         class="paypal-btn" target="_blank" rel="noopener">
-        <span class="paypal-logo">𝓟</span> Subscribe Monthly — $20
+      <a href="https://archioptimize.gumroad.com/l/axyoac"
+         class="buy-btn" target="_blank" rel="noopener">
+        <span class="buy-icon">🔒</span> Subscribe Monthly — $20
       </a>
       <p class="trust-note">
-        Secured by PayPal · After payment email
-        <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a>
+        Secured by Gumroad · License key emailed after payment ·
+        <a href="mailto:architecture.optimization@gmail.com">need help?</a>
       </p>
     </div>
   </div>
@@ -284,13 +284,13 @@
       <div class="feature"><span class="check">✓</span><span>12 months access — best price</span></div>
     </div>
     <div class="cta-wrap">
-      <a href="https://www.paypal.com/ncp/payment/3ECN9EQK9YFZY"
-         class="paypal-btn yearly" target="_blank" rel="noopener">
-        <span class="paypal-logo">𝓟</span> Subscribe Yearly — $150
+      <a href="https://archioptimize.gumroad.com/l/cumbgj"
+         class="buy-btn yearly" target="_blank" rel="noopener">
+        <span class="buy-icon">🔒</span> Subscribe Yearly — $150
       </a>
       <p class="trust-note">
-        Secured by PayPal · After payment email
-        <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a>
+        Secured by Gumroad · License key emailed after payment ·
+        <a href="mailto:architecture.optimization@gmail.com">need help?</a>
       </p>
     </div>
   </div>
@@ -304,15 +304,15 @@
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h3>Choose your plan &amp; pay via PayPal</h3>
-        <p>Click your preferred plan above and complete payment securely through PayPal.</p>
+        <h3>Choose your plan &amp; pay via Gumroad</h3>
+        <p>Click your preferred plan above and pay securely with any card, Apple Pay, or Google Pay through Gumroad.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <h3>Email us your PayPal receipt</h3>
-        <p>Send your payment confirmation to <a href="mailto:architecture.optimization@gmail.com" style="color:var(--accent)">architecture.optimization@gmail.com</a> — we'll reply with your license key within 24 hours.</p>
+        <h3>Receive your license key by email</h3>
+        <p>Your license key is sent to the email you used at checkout. If you don't see it within a few hours, contact <a href="mailto:architecture.optimization@gmail.com" style="color:var(--accent)">architecture.optimization@gmail.com</a>.</p>
       </div>
     </div>
     <div class="step">
@@ -326,7 +326,7 @@
       <div class="step-num">4</div>
       <div class="step-body">
         <h3>Renew to keep access</h3>
-        <p>Monthly plan: renew each month. Yearly plan: renew once a year. We'll email you a reminder before expiry.</p>
+        <p>Your Gumroad subscription renews automatically — monthly or yearly, depending on your plan. Cancel anytime from your Gumroad receipt.</p>
       </div>
     </div>
   </div>
@@ -341,7 +341,7 @@
       What happens when my plan expires? <span>+</span>
     </div>
     <div class="faq-a">
-      ARCHOPT will show a renewal screen when your license expires. Simply renew your plan and email us — we'll send a new key to reactivate.
+      As long as your Gumroad subscription is active, your key stays valid. If you cancel or a payment fails, ARCHOPT will show a renewal screen — resubscribe and your key reactivates.
     </div>
   </div>
 
@@ -350,7 +350,7 @@
       Can I switch from monthly to yearly? <span>+</span>
     </div>
     <div class="faq-a">
-      Yes — just pay for the yearly plan and email us. We'll cancel your monthly and issue a yearly key immediately.
+      Yes — cancel your monthly subscription on Gumroad, then subscribe to the yearly plan. Email us if you'd like help moving your key over.
     </div>
   </div>
 
@@ -368,7 +368,7 @@
       How quickly will I receive my key? <span>+</span>
     </div>
     <div class="faq-a">
-      Usually within a few hours, maximum 24 hours. We send keys manually after confirming your PayPal payment.
+      Your key is emailed right after your payment is confirmed. In rare cases it may take a few hours — if so, just email us and we'll send it manually.
     </div>
   </div>
 
