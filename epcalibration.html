@@ -255,13 +255,15 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
     <div>
       <div class="buy-eyebrow">Direct Purchase — Email Delivery</div>
       <div class="buy-title">Buy your EPCalibration<br>license key</div>
-      <p class="buy-desc">EPCalibration is sold directly — no resellers. Pay via PayPal and receive your license key by email within 24 hours. Each key activates on one machine and is valid for one year.</p>
-      <a class="btn btn-gold" href="buy_epcalibration.html" target="_blank" rel="noopener">&#128273; Buy EPCalibration — Pay with PayPal</a>
+      <p class="buy-desc">EPCalibration is sold directly — no resellers. Pay securely by card (or PayPal) and receive your license key by email. Each key activates on one machine.</p>
+      <a class="btn btn-gold gumroad-button" style="background:var(--gold);color:#fff" href="https://archioptimize.gumroad.com/l/saajr?wanted=true">&#128179; Buy EPCalibration by card — $200</a>
+      <div style="margin-top:0.9rem">
+        <a href="buy_epcalibration.html" target="_blank" rel="noopener" style="font-size:0.84rem;color:rgba(255,255,255,0.6);text-decoration:underline">Prefer PayPal? Buy here &rarr;</a>
+      </div>
       <div class="buy-trust">
-        <span>Secure PayPal payment</span>
-        <span>Email delivery within 24h</span>
+        <span>Secure card &amp; PayPal payment</span>
+        <span>Instant email delivery</span>
         <span>1 device per license</span>
-        <span>1 year license</span>
       </div>
     </div>
     <div class="key-badge">
@@ -379,5 +381,7 @@ function agreeAndDownload(){
   return false;
 }
 </script>
+<!-- Gumroad overlay: powers the "Buy by card" button (opens checkout on this page) -->
+<script src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
