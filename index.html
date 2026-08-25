@@ -138,13 +138,47 @@ h3.display {
 
 
 /* PRODUCT TABS (ARCHOPT | EPCalibration | Consultation) */
-.prod-tabs { display:flex; gap:0.5rem; justify-content:center; padding:1.75rem 2rem 0;
-  background: var(--surface); border-bottom:1px solid var(--border); flex-wrap:wrap; }
-.prod-tab { font-family:'Instrument Sans',sans-serif; font-size:0.9rem; font-weight:600;
-  letter-spacing:0.04em; color:var(--ink3); background:none; border:none; cursor:pointer;
-  padding:0.85rem 1.5rem 1rem; border-bottom:3px solid transparent; transition:all .2s; }
-.prod-tab:hover { color: var(--accent); }
-.prod-tab.active { color: var(--accent); border-bottom-color: var(--gold); }
+/* PRODUCT TABS — segmented control */
+.prod-tabs-wrap {
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  padding: 1.75rem 2rem 1.75rem;
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+}
+.prod-tabs-label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink3);
+}
+.prod-tabs {
+  display: inline-flex; gap: 4px; flex-wrap: wrap; justify-content: center;
+  background: var(--surface3);
+  border: 1px solid var(--border-md);
+  border-radius: 100px;
+  padding: 4px;
+}
+.prod-tab {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 0.9rem; font-weight: 600; letter-spacing: 0.02em;
+  color: var(--ink2); background: transparent;
+  border: none; border-radius: 100px; cursor: pointer;
+  padding: 0.6rem 1.5rem;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background .2s, color .2s, box-shadow .2s;
+}
+.prod-tab::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--ink3); opacity: 0.35; transition: all .2s;
+}
+.prod-tab:hover { background: rgba(255,255,255,0.6); color: var(--accent); }
+.prod-tab.active {
+  background: #fff; color: var(--accent);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+}
+.prod-tab.active::before { background: var(--gold); opacity: 1; }
+@media(max-width:640px){
+  .prod-tabs { border-radius: var(--r-lg); width: 100%; flex-direction: column; }
+  .prod-tab { justify-content: center; width: 100%; border-radius: var(--r); }
+}
 .prod-tab-pane { display:none; animation: fadeUp 0.4s ease both; }
 .prod-tab-pane.active { display:block; }
 
@@ -804,10 +838,16 @@ footer {
 .slideshow .slide.active { opacity:1; }
   /* STATIC COVER SHOT — product banner hero (no rotation) */
 .pb-cover {
-  width:100%; aspect-ratio:16/10; overflow:hidden;
+  width:100%; overflow:hidden;
   border-radius:8px; background:#0d1520;
   border:1px solid rgba(255,255,255,0.08);
   margin-bottom:1.25rem;
+  line-height:0;              /* kills the baseline gap under the img */
+}
+.pb-cover img {
+  width:100%; height:auto;
+  object-fit:contain;
+  display:block;
 }
 .pb-cover img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
 
@@ -1281,10 +1321,14 @@ footer {
 ══════════════════════ -->
 <div class="page" id="page-products">
   <!-- ── PRODUCT TABS ── -->
-  <div class="prod-tabs">
-    <button class="prod-tab active" id="ptab-archopt" onclick="showProdTab('archopt')" data-en="ARCHOPT" data-ar="ARCHOPT">ARCHOPT</button>
-    <button class="prod-tab" id="ptab-epcalibration" onclick="showProdTab('epcalibration')" data-en="EPCalibration" data-ar="EPCalibration">EPCalibration</button>
-    <button class="prod-tab" id="ptab-consultation" onclick="showProdTab('consultation')" data-en="Consultation" data-ar="الاستشارات">Consultation</button>
+   <!-- ── PRODUCT TABS ── -->
+  <div class="prod-tabs-wrap">
+    <div class="prod-tabs-label" data-en="Choose a product" data-ar="اختر منتجًا">Choose a product</div>
+    <div class="prod-tabs" role="tablist">
+      <button class="prod-tab active" id="ptab-archopt" role="tab" aria-selected="true" onclick="showProdTab('archopt')" data-en="ARCHOPT" data-ar="ARCHOPT">ARCHOPT</button>
+      <button class="prod-tab" id="ptab-epcalibration" role="tab" aria-selected="false" onclick="showProdTab('epcalibration')" data-en="EPCalibration" data-ar="EPCalibration">EPCalibration</button>
+      <button class="prod-tab" id="ptab-consultation" role="tab" aria-selected="false" onclick="showProdTab('consultation')" data-en="Consultation" data-ar="الاستشارات">Consultation</button>
+    </div>
   </div>
 
   <!-- ── TAB 1: ARCHOPT ── -->
@@ -1313,7 +1357,6 @@ footer {
       <div class="pb-cover">
         <img src="Pictures%20-%20ARCHOPT%20Cover.png" alt="ARCHOPT v2.0 building design optimizer interface">
       </div>
-      <div class="pb-grid">
       <div class="pb-grid">
         <div class="pb-stat"><div class="pb-stat-label">Energy Use Intensity</div><div class="pb-stat-val">142.3 kWh/m²</div></div>
         <div class="pb-stat"><div class="pb-stat-label">Embodied Carbon</div><div class="pb-stat-val gold">318 kgCO₂/m²</div></div>
@@ -1458,9 +1501,10 @@ footer {
       </div>
     </div>
       <div class="pb-vis">
+              <div class="pb-vis">
         <div class="pb-cover">
           <img src="Pictures%20-EPCalibration%20cover.png" alt="EPCalibration EnergyPlus calibration tool interface">
-      </div>
+        </div>
       <div class="pb-grid">
         <div class="pb-stat"><div class="pb-stat-label">RMSE &middot; Objective 1</div><div class="pb-stat-val">0.42 &deg;C</div></div>
         
@@ -2727,11 +2771,14 @@ function toggleLang() {
 <script>
 function showProdTab(name){
   document.querySelectorAll('.prod-tab-pane').forEach(function(p){ p.classList.remove('active'); });
-  document.querySelectorAll('.prod-tab').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.prod-tab').forEach(function(b){
+    b.classList.remove('active');
+    b.setAttribute('aria-selected','false');
+  });
   var pane = document.getElementById('prodtab-' + name);
   var btn  = document.getElementById('ptab-' + name);
   if (pane) pane.classList.add('active');
-  if (btn)  btn.classList.add('active');
+  if (btn){ btn.classList.add('active'); btn.setAttribute('aria-selected','true'); }
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 </script>
