@@ -2,14 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://net-zero-gcc.github.io/optimization.github.io/</loc>
+    <lastmod>2026-10-05</lastmod>
     <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://net-zero-gcc.github.io/optimization.github.io/archopt.html</loc>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://net-zero-gcc.github.io/optimization.github.io/epcalibration.html</loc>
-    <priority>0.80</priority>
   </url>
 </urlset>
